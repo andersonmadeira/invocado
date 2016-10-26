@@ -1,14 +1,31 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title>Tarefas</ion-title>
+    <ion-buttons end>
+        <button><ion-icon name="add"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-fab right bottom>
+    <button ion-fab (click)="addTask()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <ion-list>
+        <ion-item-sliding *ngFor="let t of tasks">
+            <ion-item>
+                {{ t.title }}
+            </ion-item>
+            <ion-item-options>
+                <button (click)="editTask(t)" light>
+                    <ion-icon name="paper"></ion-icon>
+                </button>
+                <button (click)="delTask(t)" danger>
+                    <ion-icon name="trash"></ion-icon>
+                </button>
+            </ion-item-options>
+
+        </ion-item-sliding>
+
+    </ion-list>
 </ion-content>
