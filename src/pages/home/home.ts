@@ -27,7 +27,9 @@ export class HomePage {
         {
           text: 'Adicionar',
           handler: data => {
+            if (data.title) {
               this.tasks.push(data);
+            }
           }
         }
       ]
@@ -50,10 +52,12 @@ export class HomePage {
         {
           text: 'Salvar',
           handler: data => {
-            let index = this.tasks.indexOf(task);
+            if (data.title) {
+              let index = this.tasks.indexOf(task);
 
-            if(index > -1) {
-              this.tasks[index] = data;
+              if(index > -1) {
+                this.tasks[index] = data;
+              }
             }
           }
         }
