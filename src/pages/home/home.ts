@@ -67,11 +67,28 @@ export class HomePage {
     prompt.present();
   }
 
-  delTask(task){
+  delTask(task) {
     let index = this.tasks.indexOf(task);
 
-    if(index > -1){
-      this.tasks.splice(index, 1);
+    if(index > -1) {
+      let obj = this.tasks[index];
+      let prompt = this.alertCtrl.create({
+        title: 'Excluir tarefa',
+        message: 'Tem certeza que deseja excluir a tarefa "' + obj.title + '" ?',
+        buttons: [
+          {
+            text: 'Cancelar'
+          },
+          {
+            text: 'Sim',
+            handler: () => {
+              this.tasks.splice(index, 1);
+            }
+          }
+        ]
+      });
+
+      prompt.present();
     }
   }
 
