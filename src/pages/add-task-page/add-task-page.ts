@@ -16,10 +16,8 @@ export class AddTaskPage {
   title;
   description;
 
-  constructor(public navCtrl: NavController, public view: ViewController) { }
-
-  ionViewDidLoad() {
-    console.log('Hello AddTaskPage Page');
+  constructor(public navCtrl: NavController, public view: ViewController) {
+    
   }
 
   saveTask() {
