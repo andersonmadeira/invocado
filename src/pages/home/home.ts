@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NavController, AlertController } from 'ionic-angular';
+import { NativeStorage, Dialogs } from 'ionic-native';
 
 @Component({
   selector: 'page-home',
@@ -8,10 +9,18 @@ import { NavController, AlertController } from 'ionic-angular';
 })
 export class HomePage {
 
-  tasks: any = [];
+  public tasks;
 
   constructor(private navCtrl: NavController, private alertCtrl: AlertController) {
 
+  }
+
+  ionViewDidLoad() {
+    this.tasks = [
+      { title: 'task1', description: 'test1' },
+      { title: 'task2', description: 'test2' },
+      { title: 'task3', description: 'test3' }
+    ];
   }
 
   addTask() {
@@ -29,6 +38,12 @@ export class HomePage {
           handler: data => {
             if (data.title) {
               this.tasks.push(data);
+
+              NativeStorage.setItem('last_task', data)
+              .then(
+                () => console.log('Stored item: ' + JSON.stringify(data) ),
+                error => console.error('Error storing item', error)
+              );
             }
           }
         }
