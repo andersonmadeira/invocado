@@ -20,7 +20,7 @@ export class TaskDetailPage {
 
   ionViewDidLoad() {
     this.title = this.navParams.get('task').title;
-    this.description = this.navParams.get('description').description;
+    this.description = this.navParams.get('task').description;
   }
 
 }
