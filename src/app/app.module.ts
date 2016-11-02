@@ -6,6 +6,7 @@ import { AddTaskPage } from '../pages/add-task-page/add-task-page';
 import { TaskDetailPage } from '../pages/task-detail-page/task-detail-page';
 import { Storage } from '@ionic/storage';
 import { Data } from '../providers/data';
+import { Messages } from '../providers/messages';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,6 @@ import { Data } from '../providers/data';
     AddTaskPage,
     TaskDetailPage
   ],
-  providers: [Storage, Data]
+  providers: [Storage, Data, Messages]
 })
 export class AppModule {}
