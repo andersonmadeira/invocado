@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
       Adicionar Tarefa
     </ion-title>
@@ -18,20 +18,20 @@
 
 <ion-content padding>
 
-  <ion-list inset no-lines>
+  <ion-list>
 
     <ion-item>
-      <ion-label stacked>Título:</ion-label>
-      <ion-input type="text" [(ngModel)]="title"></ion-input>
+      <ion-label color="primary" stacked>Título:</ion-label>
+      <ion-input maxlength="45" type="text" placeholder="Título" [(ngModel)]="title"></ion-input>
     </ion-item>
 
     <ion-item>
-     <ion-label stacked>Descrição:</ion-label>
-     <ion-textarea rows="4" [(ngModel)]="description"></ion-textarea>
-   </ion-item>
+      <ion-label color="primary" stacked>Descrição:</ion-label>
+      <ion-textarea rows="22" placeholder="Descrição" [(ngModel)]="description"></ion-textarea>
+    </ion-item>
 
   </ion-list>
 
-  <button full ion-button (click)="saveTask()">Salvar</button>
+  <button ion-button block (click)="saveTask()">Salvar</button>
 
 </ion-content>
