@@ -6,9 +6,9 @@
 
 <ion-content>
   <ion-fab right bottom>
-    <button ion-fab (click)="addTask()"><ion-icon name="add-circle"></ion-icon></button>
+    <button ion-fab (click)="addTask()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
-  <ion-list>
+  <ion-list no-lines>
     <ion-item *ngFor="let t of tasks" (click)="viewTask(t)"> {{ t.title }} </ion-item>
   </ion-list>
 </ion-content>
