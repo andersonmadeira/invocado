@@ -47,6 +47,10 @@ export class HomePage {
     this.dataService.save(this.tasks);
   }
 
+  openTask(task) {
+    this.navCtrl.push(TaskDetailPage, { task: task });
+  }
+
   openSheet(task) {
     let actionSheet = this.actionSheetCtrl.create({
       title: 'Task Options',
@@ -80,7 +84,7 @@ export class HomePage {
           role: 'edit',
           icon: 'create',
           handler: () => {
-            this.navCtrl.push(TaskDetailPage, { task: task });
+            this.openTask(task);
           }
         },{
           text: 'Cancel',
