@@ -1,0 +1,16 @@
+<ion-menu [content]="mainContent">
+  <ion-toolbar>
+    <ion-title>Pages</ion-title>
+  </ion-toolbar>
+  <ion-content>
+    <ion-list padding>
+      <button ion-item (click)="openPage()">Home</button>
+      <button ion-item (click)="openPage()">Today</button>
+      <button ion-item (click)="openPage()">Categories</button>
+      <button ion-item (click)="openPage()">Settings</button>
+      <button ion-item (click)="openPage()">About</button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage"></ion-nav>

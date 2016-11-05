@@ -1,3 +1,5 @@
 page-task-detail-page {
-
+  .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+    box-shadow: 0px;
+  }
 }
